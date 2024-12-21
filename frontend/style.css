@@ -1,0 +1,205 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #f0f4f8;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+input, button, textarea {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Login Section */
+#login-section {
+    margin: 20px auto;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* App Section */
+#app-section {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+#letter-select button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#letter-select button:hover {
+    background-color: #0056b3;
+}
+
+/* Canvas Container */
+div[style*="relative"] {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin: 20px auto; /* Zentriert und mit Abstand */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff; /* Hintergrund für klare Abgrenzung */
+}
+
+/* Canvases */
+#guideCanvas, #letterCanvas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#guideCanvas {
+    background-color: #f9f9f9;
+}
+
+#letterCanvas {
+    background-color: transparent;
+}
+
+
+
+/* PDF- und Einstellungen-Sektionen */
+#pdf-section, #settings-section {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+/* Slider Inputs */
+input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}
+
+#selected-letter-indicator {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#saved-letters-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#saved-letters img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#saved-letters img:hover {
+    transform: scale(1.1);
+    border-color: #007BFF;
+}
+
+#saved-letters-container button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+#saved-letters-container div:hover button {
+    display: block;
+}
+
+/* Ensure no extra padding, margin, or box size */
+#saved-letters img {
+    width: 50px; /* or whatever size you want */
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: block; /* Remove inline spacing */
+    border: none; /* Remove borders */
+}
+
+#saved-letters div {
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Keeps alignment clean */
+}
+
+#user-info {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+#user-info button {
+    background-color: #FF5733;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+#user-info button:hover {
+    background-color: #C43D28;
+}
+

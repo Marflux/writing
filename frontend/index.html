@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchstaben Zeichnen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- User Info and Logout Button -->
+        <div id="user-info" style="display: none; position: fixed; top: 10px; left: 10px; text-align: left;">
+            <span id="logged-in-user" style="font-weight: bold; color: #333;"></span>
+            <br>
+            <button onclick="logout()" style="margin-top: 5px;">Abmelden</button>
+        </div>
+    
+        <!-- Login Section -->
+        <div id="login-section">
+            <h2>Anmelden</h2>
+            <input type="text" id="username" placeholder="Benutzername">
+            <input type="password" id="password" placeholder="Passwort">
+            <button onclick="register()">Registrieren</button>
+            <button onclick="login()">Anmelden</button>
+        </div>
+        
+
+    
+    <!-- App Section -->
+    <div id="app-section" style="display:none;">
+        <h1>Buchstaben Zeichnen</h1>
+        <div id="selected-letter-indicator" style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+            Ausgewählter Buchstabe: <span id="current-letter">a</span>
+        </div>
+        <div id="letter-select"></div>
+        
+        <div style="position: relative; width: 100px; height: 150px; margin: auto; display: flex; justify-content: center;">
+            <!-- Hintergrund-Canvas (Schreibhilfe) -->
+            <canvas id="guideCanvas" width="100" height="150" style="position: absolute; top: 0; left: 0; z-index: 0;"></canvas>
+            <!-- Vordergrund-Canvas (Zeichnung) -->
+            <canvas id="letterCanvas" width="100" height="150" style="position: absolute; top: 0; left: 0; z-index: 1;"></canvas>
+        </div>
+        
+        
+        
+        
+        
+        <button onclick="clearCanvas()">Canvas Löschen</button>
+        <button onclick="saveLetter()">Speichern</button>
+    </div>
+
+    <div id="saved-letters-container" style="display: none; margin-top: 20px;">
+        <h3>Gespeicherte Buchstaben:</h3>
+        <div id="saved-letters" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+    </div>
+    
+
+    <!-- Text Input and Generate PDF -->
+    <div id="pdf-section" style="display:none;">
+        <h3>Schreibe deinen Text</h3>
+        <textarea id="userText" rows="15" cols="50" placeholder="Gib hier deinen Text ein"></textarea>
+        <br>
+        <button onclick="generateHandwrittenText()">Handschrift-PDF erstellen</button>
+    </div>
+
+    <!-- Sliders Section -->
+    <div id="settings-section" style="display:none;">
+        <h3>PDF-Einstellungen Anpassen</h3>
+        <button id="save-settings-button" onclick="saveSettings()">Einstellungen speichern</button>
+        <br><br>
+        <label>Abstand zwischen Buchstaben:
+            <input type="range" id="letterSpacing" min="-20" max="50" value="-15">        
+        </label>
+        <br>
+        <label>Abstand zwischen Wörtern:
+            <input type="range" id="wordSpacing" min="0" max="50" value="10">
+        </label>
+        <br>
+        <label>Randabstand:
+            <input type="range" id="sideSpacing" min="0" max="100" value="30">
+        </label>
+        <br>
+        <label>Buchstabengröße:
+            <input type="range" id="letterSize" min="10" max="100" value="30">
+        </label>
+        <br>
+        <label>Zeilenbreite:
+            <input type="range" id="lineWidth" min="10" max="100" value="10">
+        </label>
+        <br>
+        <label>Zeilenabstand:
+            <input type="range" id="lineSpacing" min="10" max="100" value="20">
+        </label>
+        <br>
+        <label>Unregelmäßigkeit (Messy-Faktor):
+            <input type="range" id="messyFactor" min="0" max="20" value="4">
+        </label>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
